@@ -1,0 +1,39 @@
+# robots.txt for SpinTheWheel.org.uk
+
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /terms.html
+Allow: /policy.html
+Allow: /contact.html
+Allow: /dmca.html
+
+# Disallow admin or development areas
+Disallow: /admin/
+Disallow: /dev/
+Disallow: /test/
+
+# Disallow specific files
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
+
+# Allow CSS, JavaScript, and images
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Crawl delay for heavy crawlers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+# Sitemap location
+Sitemap: https://udaynath03.github.io/spin-the-wheel.github.io/sitemap.xml
