@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - SpinTheWheel</title>
+    <meta name="description" content="Learn about how SpinTheWheel collects, uses, and protects your personal information.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://spinthewheel.org.uk/policy">
+    <meta property="og:title" content="Privacy Policy - SpinTheWheel">
+    <meta property="og:description" content="Learn about how SpinTheWheel collects, uses, and protects your personal information.">
+    <meta property="og:image" content="https://spinthewheel.org.uk/wheel-preview.jpg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --primary-light: #4895ef;
+            --primary-dark: #3a0ca3;
+            --secondary-color: #4cc9f0;
+            --accent-color: #f72585;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --success-color: #4CAF50;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        h1, h2, h3, h4, h5, h6, .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .navbar-brand .wheel-icon {
+            color: var(--secondary-color);
+            margin-right: 8px;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 4rem 0;
+        }
+        
+        .page-header {
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                        url('https://images.unsplash.com/photo-1553481187-be93c21490a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 3rem 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .page-title {
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .page-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .content-section {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .content-section h2 {
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .content-section h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .content-section h3 {
+            color: var(--primary-color);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer h5 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer h5:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links li:hover {
+            transform: translateX(5px);
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.7);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .main-content {
+                padding: 2rem 0;
+            }
+            
+            .page-header {
+                padding: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <i class="fas fa-sync-alt fa-spin wheel-icon"></i>SpinTheWheel
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/dmca.html">DMCA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/policy.html">Privacy Policy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/terms.html">Terms</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header" data-aos="fade-up">
+                <h1 class="page-title">Privacy Policy</h1>
+                <p class="lead">Last updated: March 27, 2025</p>
+            </div>
+            
+            <div class="content-section" data-aos="fade-up">
+                <h2>Introduction</h2>
+                <p>Welcome to SpinTheWheel ("we," "our," or "us"). We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we look after your personal data when you visit our website (regardless of where you visit it from) and tell you about your privacy rights and how the law protects you.</p>
+                
+                <p>This privacy policy aims to give you information on how we collect and process your personal data through your use of this website, including any data you may provide through this website when you use our services, sign up for our newsletter, or contact us.</p>
+                
+                <p>This website is not intended for children under 13 years of age. We do not knowingly collect data relating to children.</p>
+            </div>
+            
+            <div class="content-section" data-aos="fade-up" data-aos-delay="100">
+                <h2>The Data We Collect About You</h2>
+                <p>Personal data, or personal information, means any information about an individual from which that person can be identified. It does not include data where the identity has been removed (anonymous data).</p>
+                
+                <p>We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:</p>
+                
+                <h3>Information You Provide to Us</h3>
+                <ul>
+                    <li><strong>Identity Data</strong> includes first name, last name, username or similar identifier.</li>
+                    <li><strong>Contact Data</strong> includes email address and telephone numbers.</li>
+                    <li><strong>Technical Data</strong> includes internet protocol (IP) address, your login data, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform, and other technology on the devices you use to access this website.</li>
+                    <li><strong>Usage Data</strong> includes information about how you use our website and services.</li>
+                </ul>
+                
+                <h3>Information We Collect Automatically</h3>
+                <p>When you use our website, we automatically collect certain information about your device, including information about your web browser, IP address, time zone, and some of the cookies that are installed on your device. Additionally, as you browse the site, we collect information about the individual web pages that you view, what websites or search terms referred you to the site, and information about how you interact with the site.</p>
+            </div>
+            
+            <div class="content-section" data-aos="fade-up" data-aos-delay="200">
+                <h2>How We Use Your Personal Data</h2>
+                <p>We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:</p>
+                
+                <ul>
+                    <li>Where we need to perform the contract we are about to enter into or have entered into with you.</li>
+                    <li>Where it is necessary for our legitimate interests (or those of a third party) and your interests and fundamental rights do not override those interests.</li>
+                    <li>Where we need to comply with a legal obligation.</li>
+                </ul>
+                
+                <p>Generally, we do not rely on consent as a legal basis for processing your personal data although we will get your consent before sending third party direct marketing communications to you via email or text message. You have the right to withdraw consent to marketing at any time by contacting us.</p>
+                
+                <h3>Purposes for Which We Will Use Your Personal Data</h3>
+                <p>We have set out below, in a table format, a description of all the ways we plan to use your personal data, and which of the legal bases we rely on to do so.</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Purpose/Activity</th>
+                                <th>Type of data</th>
+                                <th>Lawful basis for processing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>To register you as a new user</td>
+                                <td>Identity, Contact</td>
+                                <td>Performance of a contract with you</td>
+                            </tr>
+                            <tr>
+                                <td>To manage our relationship with you</td>
+                                <td>Identity, Contact, Profile</td>
+                                <td>Performance of a contract with you; Necessary for our legitimate interests</td>
+                            </tr>
+                            <tr>
+                                <td>To administer and protect our business and this website</td>
+                                <td>Identity, Contact, Technical</td>
+                                <td>Necessary for our legitimate interests; Necessary to comply with a legal obligation</td>
+                            </tr>
+                            <tr>
+                                <td>To deliver relevant website content and advertisements to you</td>
+                                <td>Identity, Contact, Profile, Usage, Marketing and Communications, Technical</td>
+                                <td>Necessary for our legitimate interests</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="content-section" data-aos="fade-up" data-aos-delay="300">
+                <h2>Data Security</h2>
+                <p>We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed. In addition, we limit access to your personal data to those employees, agents, contractors and other third parties who have a business need to know. They will only process your personal data on our instructions and they are subject to a duty of confidentiality.</p>
+                
+                <p>We have put in place procedures to deal with any suspected personal data breach and will notify you and any applicable regulator of a breach where we are legally required to do so.</p>
+            </div>
+            
+            <div class="content-section" data-aos="fade-up" data-aos-delay="400">
+                <h2>Your Legal Rights</h2>
+                <p>Under certain circumstances, you have rights under data protection laws in relation to your personal data. These include the right to:</p>
+                
+                <ul>
+                    <li>Request access to your personal data.</li>
+                    <li>Request correction of your personal data.</li>
+                    <li>Request erasure of your personal data.</li>
+                    <li>Object to processing of your personal data.</li>
+                    <li>Request restriction of processing your personal data.</li>
+                    <li>Request transfer of your personal data.</li>
+                    <li>Right to withdraw consent.</li>
+                </ul>
+                
+                <p>If you wish to exercise any of the rights set out above, please contact us at contact@spinthewheel.org.uk.</p>
+            </div>
+            
+            <div class="content-section" data-aos="fade-up" data-aos-delay="500">
+                <h2>Changes to the Privacy Policy</h2>
+                <p>We may update this privacy policy from time to time. The updated version will be indicated by an updated "Last updated" date and the updated version will be effective as soon as it is accessible. We encourage you to review this privacy policy frequently to be informed of how we are protecting your information.</p>
+            </div>
+            
+            <div class="content-section" data-aos="fade-up" data-aos-delay="600">
+                <h2>Contact Us</h2>
+                <p>If you have any questions about this privacy policy or our privacy practices, please contact us at:</p>
+                
+                <address>
+                    <p><strong>Email:</strong> contact@spinthewheel.org.uk</p>
+                    <p><strong>Postal address:</strong> 123 Wheel Street, London, UK</p>
+                </address>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0" data-aos="fade-up">
+                    <h5>About SpinTheWheel</h5>
+                    <p>A fun and easy way to make random decisions. Let fate decide your next move with our interactive spinning wheel!</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="/"><i class="fas fa-chevron-right me-2"></i>Home</a></li>
+                        <li><a href="/dmca.html"><i class="fas fa-chevron-right me-2"></i>DMCA</a></li>
+                        <li><a href="/contact.html"><i class="fas fa-chevron-right me-2"></i>Contact Us</a></li>
+                        <li><a href="/policy.html"><i class="fas fa-chevron-right me-2"></i>Privacy Policy</a></li>
+                        <li><a href="/terms.html"><i class="fas fa-chevron-right me-2"></i>Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="200">
+                    <h5>Contact Us</h5>
+                    <address>
+                        <p><i class="fas fa-envelope me-2"></i> info@spinthewheel.org.uk</p>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> London, United Kingdom</p>
+                        <p><i class="fas fa-phone me-2"></i> +44 123 456 7890</p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p class="mb-0">&copy; 2025 <a href="https://spinthewheel.org.uk/">SpinTheWheel.org.uk</a> - All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS animations
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+        });
+    </script>
+</body>
+</html>
