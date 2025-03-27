@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin the Wheel to Decide a Random Choice – Let Fate Decide!</title>
+    <meta name="description" content="Can't decide? Spin the Wheel to choose a Random Choice & let fate pick for you! Quick, fun, and exciting- give it a spin now! 🎯">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://spinthewheel.org.uk/">
+    <meta property="og:title" content="Spin the Wheel to Decide a Random Choice – Let Fate Decide!">
+    <meta property="og:description" content="Can't decide? Spin the Wheel to choose a Random Choice & let fate pick for you! Quick, fun, and exciting- give it a spin now! 🎯">
+    <meta property="og:image" content="https://spinthewheel.org.uk/wheel-preview.jpg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://spinthewheel.org.uk/">
+    <meta property="twitter:title" content="Spin the Wheel to Decide a Random Choice – Let Fate Decide!">
+    <meta property="twitter:description" content="Can't decide? Spin the Wheel to choose a Random Choice & let fate pick for you! Quick, fun, and exciting- give it a spin now! 🎯">
+    <meta property="twitter:image" content="https://spinthewheel.org.uk/wheel-preview.jpg">
+    <!-- Additional SEO tags -->
+    <link rel="canonical" href="https://spinthewheel.org.uk/">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="spin the wheel, random choice, decision maker, random picker, wheel of fortune, random selector, decision wheel">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --primary-light: #4895ef;
+            --primary-dark: #3a0ca3;
+            --secondary-color: #4cc9f0;
+            --accent-color: #f72585;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --success-color: #4CAF50;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        h1, h2, h3, h4, h5, h6, .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .navbar-brand .wheel-icon {
+            color: var(--secondary-color);
+            margin-right: 8px;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 4rem 0;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                        url('https://images.unsplash.com/photo-1553481187-be93c21490a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 3rem 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+        }
+        
+        .page-title {
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .page-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .lead {
+            font-weight: 300;
+            color: var(--gray-color);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .wheel-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto 40px;
+            transition: transform 0.3s ease;
+        }
+        
+        .wheel-container:hover {
+            transform: scale(1.02);
+        }
+        
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .wheel-pointer {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 50px;
+            z-index: 10;
+            font-size: 40px;
+            color: var(--accent-color);
+            filter: drop-shadow(0 3px 5px rgba(0,0,0,0.2));
+        }
+        
+        .btn-spin {
+            background: linear-gradient(135deg, var(--accent-color), #b5179e);
+            color: white;
+            border: none;
+            padding: 12px 36px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(247, 37, 133, 0.3);
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .btn-spin:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(247, 37, 133, 0.4);
+        }
+        
+        .btn-spin:active {
+            transform: translateY(1px);
+        }
+        
+        .btn-spin:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .btn-update {
+            background: linear-gradient(135deg, var(--success-color), #2e7d32);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-weight: 500;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+        
+        .btn-update:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+            background: linear-gradient(135deg, #2e7d32, var(--success-color));
+        }
+        
+        .result {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 30px 0;
+            min-height: 42px;
+            color: var(--primary-dark);
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        
+        .result:not(:empty) {
+            background-color: rgba(67, 97, 238, 0.1);
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.1);
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .options-container {
+            margin-top: 40px;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            font-weight: 600;
+            padding: 15px 20px;
+            border: none;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        textarea.form-control {
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 15px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            resize: vertical;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        }
+        
+        textarea.form-control:focus {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer h5 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer h5:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+        
+        .footer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links li:hover {
+            transform: translateX(5px);
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.7);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+        }
+        
+        .btn-official {
+            background: linear-gradient(135deg, #d4a017, #ffc107);
+            color: #212529;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 160, 23, 0.3);
+            margin: 30px auto;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-official:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 160, 23, 0.4);
+            background: linear-gradient(135deg, #ffc107, #d4a017);
+        }
+        
+        .btn-official:active {
+            transform: translateY(1px);
+        }
+        
+        .wheel-types-section {
+            background-color: #f0f8ff;
+            padding: 3rem 0;
+            margin: 3rem 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        .wheel-types-title {
+            color: var(--primary-dark);
+            margin-bottom: 2rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .wheel-types-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .wheel-type-item {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .wheel-type-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .wheel-type-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+            color: white;
+            font-size: 18px;
+        }
+        
+        .wheel-type-text {
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        @media (max-width: 768px) {
+            .wheel-container {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .main-content {
+                padding: 2rem 0;
+            }
+            
+            .hero-section {
+                padding: 2rem 0;
+            }
+            
+            .result {
+                font-size: 22px;
+            }
+            
+            .wheel-types-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <i class="fas fa-sync-alt fa-spin wheel-icon"></i>SpinTheWheel
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/dmca">DMCA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/policy">Privacy Policy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/terms">Terms</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="hero-section text-center" data-aos="fade-up">
+                <h1 class="page-title">Spin the Wheel to Decide a Random Choice – Let Fate Decide!</h1>
+                <p class="lead">Can't decide? Spin the Wheel to choose a Random Choice & let fate pick for you! Quick, fun, and exciting- give it a spin now! 🎯</p>
+                
+                <!-- Official Website Button -->
+                <a href="https://spinthewheel.org.uk/" target="_blank" class="btn-official">
+                    <i class="fas fa-external-link-alt"></i> Go to the Official Website
+                </a>
+            </div>
+            
+            <div class="text-center">
+                <div class="wheel-container" data-aos="zoom-in">
+                    <canvas id="wheel" width="400" height="400"></canvas>
+                    <div class="wheel-pointer">⯆</div>
+                </div>
+                
+                <button id="spin-btn" class="btn-spin" data-aos="fade-up">SPIN THE WHEEL</button>
+                
+                <div class="result" id="result"></div>
+                
+                <div class="options-container" data-aos="fade-up">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0">Customize Wheel Options</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Enter options, one per line:</p>
+                            <textarea id="options-input" class="form-control mb-3" rows="6">Option 1
+Option 2
+Option 3
+Option 4
+Option 5
+Option 6</textarea>
+                            <button id="update-btn" class="btn-update">Update Wheel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Wheel Types Section -->
+            <section class="wheel-types-section" data-aos="fade-up">
+                <div class="container text-center">
+                    <h2 class="wheel-types-title">Explore More Wheel Types</h2>
+                    <p class="lead mb-5">Visit the official website to access these specialized wheel pickers:</p>
+                    
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="wheel-type-item">
+                                <div class="wheel-type-icon">
+                                    <i class="fas fa-globe-americas"></i>
+                                </div>
+                                <div class="wheel-type-text">Country Picker Wheel</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="wheel-type-item">
+                                <div class="wheel-type-icon">
+                                    <i class="fab fa-instagram"></i>
+                                </div>
+                                <div class="wheel-type-text">Instagram Comment Picker Wheel</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="wheel-type-item">
+                                <div class="wheel-type-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="wheel-type-text">Team Picker Wheel</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="wheel-type-item">
+                                <div class="wheel-type-icon">
+                                    <i class="fas fa-map"></i>
+                                </div>
+                                <div class="wheel-type-text">State Picker Wheel</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="wheel-type-item">
+                                <div class="wheel-type-icon">
+                                    <i class="fas fa-baseball-ball"></i>
+                                </div>
+                                <div class="wheel-type-text">MLB Picker Wheel</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="wheel-type-item">
+                                <div class="wheel-type-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="wheel-type-text">Yes No Picker Wheel</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="wheel-type-item">
+                                <div class="wheel-type-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <div class="wheel-type-text">Color Picker Wheel</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="wheel-type-item">
+                                <div class="wheel-type-icon">
+                                    <i class="fas fa-basketball-ball"></i>
+                                </div>
+                                <div class="wheel-type-text">NBA Picker Wheel</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="wheel-type-item">
+                                <div class="wheel-type-icon">
+                                    <i class="fas fa-sort-numeric-down"></i>
+                                </div>
+                                <div class="wheel-type-text">Number Picker Wheel</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="wheel-type-item">
+                                <div class="wheel-type-icon">
+                                    <i class="fas fa-image"></i>
+                                </div>
+                                <div class="wheel-type-text">Image Picker Wheel</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="wheel-type-item">
+                                <div class="wheel-type-icon">
+                                    <i class="fas fa-football-ball"></i>
+                                </div>
+                                <div class="wheel-type-text">NFL Picker Wheel</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="wheel-type-item">
+                                <div class="wheel-type-icon">
+                                    <i class="fas fa-font"></i>
+                                </div>
+                                <div class="wheel-type-text">Letter Picker Wheel</div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="wheel-type-item">
+                                <div class="wheel-type-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <div class="wheel-type-text">Date Picker Wheel</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://spinthewheel.org.uk/" target="_blank" class="btn-official mt-4">
+                        <i class="fas fa-external-link-alt"></i> Access All Wheel Types
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0" data-aos="fade-up">
+                    <h5>About SpinTheWheel</h5>
+                    <p>A fun and easy way to make random decisions. Let fate decide your next move with our interactive spinning wheel!</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="/"><i class="fas fa-chevron-right me-2"></i>Home</a></li>
+                        <li><a href="/dmca"><i class="fas fa-chevron-right me-2"></i>DMCA</a></li>
+                        <li><a href="/contact"><i class="fas fa-chevron-right me-2"></i>Contact Us</a></li>
+                        <li><a href="/policy"><i class="fas fa-chevron-right me-2"></i>Privacy Policy</a></li>
+                        <li><a href="/terms"><i class="fas fa-chevron-right me-2"></i>Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="200">
+                    <h5>Contact Us</h5>
+                    <address>
+                        <p><i class="fas fa-envelope me-2"></i> info@spinthewheel.org.uk</p>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> London, United Kingdom</p>
+                        <p><i class="fas fa-phone me-2"></i> +44 123 456 7890</p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p class="mb-0">&copy; 2023 <a href="https://spinthewheel.org.uk/">SpinTheWheel.org.uk</a> - All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS animations
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            
+            const canvas = document.getElementById('wheel');
+            const ctx = canvas.getContext('2d');
+            const spinBtn = document.getElementById('spin-btn');
+            const resultDisplay = document.getElementById('result');
+            const optionsInput = document.getElementById('options-input');
+            const updateBtn = document.getElementById('update-btn');
+            
+            let options = ['Option 1', 'Option 2', 'Option 3', 'Option 4', 'Option 5', 'Option 6'];
+            let startAngle = 0;
+            let spinTimeout = null;
+            let spinAngleStart = 0;
+            let spinTime = 0;
+            let spinTimeTotal = 0;
+            let currentResult = '';
+            let isSpinning = false;
+            
+            // Enhanced colors for the wheel segments
+            const colors = [
+                '#4361ee', '#3a0ca3', '#7209b7', '#f72585', 
+                '#4cc9f0', '#4895ef', '#560bad', '#b5179e',
+                '#3f37c9', '#4361ee', '#4895ef', '#4cc9f0'
+            ];
+            
+            // Draw the wheel initially
+            drawWheel();
+            
+            // Spin button click event
+            spinBtn.addEventListener('click', function() {
+                if (!isSpinning) {
+                    startSpin();
+                }
+            });
+            
+            // Update wheel with custom options
+            updateBtn.addEventListener('click', function() {
+                const newOptions = optionsInput.value.split('\n')
+                    .map(option => option.trim())
+                    .filter(option => option.length > 0);
+                
+                if (newOptions.length < 2) {
+                    alert('Please enter at least 2 options.');
+                    return;
+                }
+                
+                options = newOptions;
+                drawWheel();
+                resultDisplay.textContent = '';
+            });
+            
+            function drawWheel() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw wheel background
+                ctx.beginPath();
+                ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2 - 10, 0, 2 * Math.PI);
+                ctx.fillStyle = '#212529';
+                ctx.fill();
+                
+                const numOptions = options.length;
+                const arcSize = 2 * Math.PI / numOptions;
+                
+                // Draw wheel segments with enhanced styling
+                for (let i = 0; i < numOptions; i++) {
+                    const angle = startAngle + i * arcSize;
+                    ctx.beginPath();
+                    
+                    // Create gradient for each segment
+                    const gradient = ctx.createRadialGradient(
+                        canvas.width / 2, canvas.height / 2, 0,
+                        canvas.width / 2, canvas.height / 2, canvas.width / 2 - 10
+                    );
+                    gradient.addColorStop(0, '#fff');
+                    gradient.addColorStop(0.3, colors[i % colors.length]);
+                    gradient.addColorStop(1, darkenColor(colors[i % colors.length], 20));
+                    
+                    ctx.fillStyle = gradient;
+                    
+                    // Draw segment
+                    ctx.moveTo(canvas.width / 2, canvas.height / 2);
+                    ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2 - 10, angle, angle + arcSize);
+                    ctx.lineTo(canvas.width / 2, canvas.height / 2);
+                    ctx.fill();
+                    
+                    // Add segment border
+                    ctx.beginPath();
+                    ctx.moveTo(canvas.width / 2, canvas.height / 2);
+                    ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2 - 10, angle, angle + arcSize);
+                    ctx.lineTo(canvas.width / 2, canvas.height / 2);
+                    ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                    
+                    // Draw text
+                    ctx.save();
+                    ctx.translate(canvas.width / 2, canvas.height / 2);
+                    ctx.rotate(angle + arcSize / 2);
+                    ctx.textAlign = 'right';
+                    ctx.fillStyle = '#fff';
+                    ctx.font = 'bold 16px Montserrat, sans-serif';
+                    ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+                    ctx.shadowBlur = 3;
+                    ctx.shadowOffsetX = 1;
+                    ctx.shadowOffsetY = 1;
+                    
+                    // Adjust text position based on length
+                    const text = options[i];
+                    const maxLength = 15;
+                    const displayText = text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+                    
+                    ctx.fillText(displayText, canvas.width / 2 - 30, 5);
+                    ctx.restore();
+                }
+                
+                // Draw center circle
+                ctx.beginPath();
+                ctx.arc(canvas.width / 2, canvas.height / 2, 25, 0, 2 * Math.PI);
+                const centerGradient = ctx.createRadialGradient(
+                    canvas.width / 2, canvas.height / 2, 0,
+                    canvas.width / 2, canvas.height / 2, 25
+                );
+                centerGradient.addColorStop(0, '#f8f9fa');
+                centerGradient.addColorStop(1, '#e9ecef');
+                ctx.fillStyle = centerGradient;
+                ctx.fill();
+                
+                ctx.beginPath();
+                ctx.arc(canvas.width / 2, canvas.height / 2, 25, 0, 2 * Math.PI);
+                ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                
+                // Draw outer circle
+                ctx.beginPath();
+                ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2 - 10, 0, 2 * Math.PI);
+                ctx.strokeStyle = '#fff';
+                ctx.lineWidth = 3;
+                ctx.stroke();
+                
+                // Add a second outer ring for depth
+                ctx.beginPath();
+                ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2 - 5, 0, 2 * Math.PI);
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            }
+            
+            function startSpin() {
+                isSpinning = true;
+                spinBtn.disabled = true;
+                updateBtn.disabled = true;
+                resultDisplay.textContent = '';
+                
+                // Random spin parameters
+                spinAngleStart = Math.random() * 10 + 10;
+                spinTime = 0;
+                spinTimeTotal = Math.random() * 3000 + 4000; // 4-7 seconds
+                
+                rotateWheel();
+            }
+            
+            function rotateWheel() {
+                spinTime += 30;
+                if (spinTime >= spinTimeTotal) {
+                    stopRotateWheel();
+                    return;
+                }
+                
+                // Easing function for slowing down
+                const spinFactor = easeOutCubic(spinTime, 0, spinAngleStart, spinTimeTotal);
+                startAngle += (spinFactor * Math.PI / 180);
+                
+                drawWheel();
+                spinTimeout = setTimeout(rotateWheel, 30);
+            }
+            
+            function stopRotateWheel() {
+                clearTimeout(spinTimeout);
+                
+                // Calculate result
+                const degrees = startAngle * 180 / Math.PI + 90;
+                const arcd = 360 / options.length;
+                const index = Math.floor((360 - degrees % 360) / arcd);
+                currentResult = options[index];
+                
+                // Display result with animation
+                setTimeout(() => {
+                    resultDisplay.textContent = `Result: ${currentResult}`;
+                    
+                    // Add confetti effect
+                    createConfetti();
+                }, 500);
+                
+                // Reset state
+                isSpinning = false;
+                spinBtn.disabled = false;
+                updateBtn.disabled = false;
+            }
+            
+            // Easing function for smooth deceleration
+            function easeOutCubic(t, b, c, d) {
+                const ts = (t /= d) * t;
+                const tc = ts * t;
+                return b + c * (tc + -3 * ts + 3 * t);
+            }
+            
+            // Function to darken a color
+            function darkenColor(color, percent) {
+                const num = parseInt(color.replace('#', ''), 16);
+                const amt = Math.round(2.55 * percent);
+                const R = (num >> 16) - amt;
+                const G = (num >> 8 & 0x00FF) - amt;
+                const B = (num & 0x0000FF) - amt;
+                
+                return '#' + (
+                    0x1000000 +
+                    (R < 0 ? 0 : R) * 0x10000 +
+                    (G < 0 ? 0 : G) * 0x100 +
+                    (B < 0 ? 0 : B)
+                ).toString(16).slice(1);
+            }
+            
+            // Simple confetti effect
+            function createConfetti() {
+                const confettiCount = 100;
+                const container = document.createElement('div');
+                container.style.position = 'fixed';
+                container.style.top = '0';
+                container.style.left = '0';
+                container.style.width = '100%';
+                container.style.height = '100%';
+                container.style.pointerEvents = 'none';
+                container.style.zIndex = '1000';
+                document.body.appendChild(container);
+                
+                for (let i = 0; i < confettiCount; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.style.position = 'absolute';
+                    confetti.style.width = '10px';
+                    confetti.style.height = '10px';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.borderRadius = '50%';
+                    confetti.style.top = '0';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    container.appendChild(confetti);
+                    
+                    const animation = confetti.animate([
+                        { transform: 'translateY(0) rotate(0)', opacity: 1 },
+                        { transform: `translateY(${window.innerHeight}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                    ], {
+                        duration: Math.random() * 3000 + 2000,
+                        easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
+                    });
+                    
+                    animation.onfinish = () => {
+                        confetti.remove();
+                        if (container.children.length === 0) {
+                            container.remove();
+                        }
+                    };
+                }
+            }
+        });
+    </script>
+</body>
+</html>
